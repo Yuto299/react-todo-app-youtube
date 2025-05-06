@@ -17,11 +17,13 @@ function App() {
     todoNameRef.current.value = null;
   };
 
+  // 完了したタスクを削除する
   const handleClear = () => {
     const newTodos = todos.filter((todo) => !todo.completed);
     setTodos(newTodos);
   };
 
+  // タスクの完了状態を切り替える
   const toggleTodo = (id) => {
     const newTodos = [...todos]; // 配列のコピーを作成
     const todo = newTodos.find((todo) => todo.id === id); // idが一致するtodoを探す
